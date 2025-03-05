@@ -1,55 +1,31 @@
-import { useState } from 'react'
-import { ThemeProvider, createTheme } from '@mui/material/styles'
-import CssBaseline from '@mui/material/CssBaseline'
-import { Container, Box, Typography, Button, AppBar, Toolbar } from '@mui/material'
+import { Box, CssBaseline } from '@mui/material';
+import { TetrisGame } from './components/TetrisGame';
 
-// Create a theme instance
-const theme = createTheme({
-  palette: {
-    mode: 'light',
-    primary: {
-      main: '#1976d2',
-    },
-    secondary: {
-      main: '#dc004e',
-    },
-  },
-})
-
-function App() {
-  const [count, setCount] = useState(0)
-
+export const App = () => {
   return (
-    <ThemeProvider theme={theme}>
+    <>
       <CssBaseline />
-      <Box sx={{ flexGrow: 1 }}>
-        <AppBar position="static">
-          <Toolbar>
-            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-              React + TypeScript + Material UI
-            </Typography>
-          </Toolbar>
-        </AppBar>
-        <Container maxWidth="sm" sx={{ mt: 4 }}>
-          <Box sx={{ textAlign: 'center' }}>
-            <Typography variant="h4" component="h1" gutterBottom>
-              Vite + React + TS
-            </Typography>
-            <Typography variant="body1" paragraph>
-              Edit <code>src/App.tsx</code> and save to test HMR
-            </Typography>
-            <Button
-              variant="contained"
-              color="primary"
-              onClick={() => setCount((count) => count + 1)}
-            >
-              Count is {count}
-            </Button>
-          </Box>
-        </Container>
+      <Box
+        sx={{
+          minHeight: '100vh',
+          background: 'linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%)',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          '&::before': {
+            content: '""',
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            background: 'radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.3) 100%)',
+            pointerEvents: 'none',
+          },
+        }}
+      >
+        <TetrisGame />
       </Box>
-    </ThemeProvider>
-  )
-}
-
-export default App
+    </>
+  );
+};
