@@ -9,7 +9,7 @@ import { useAudio } from '../hooks/useAudio';
 export const TetrisGame = () => {
     const [isPlaying, setIsPlaying] = useState(false);
     const [isMuted, setIsMuted] = useState(false);
-    const { play, pause, setMuted, setVolume } = useAudio('/assets/audio/tetris-theme.mp3');
+    const { play, pause, setMuted, setVolume } = useAudio('/learning-ai/assets/audio/tetris-theme.mp3');
 
     // Handle game state changes
     useEffect(() => {
