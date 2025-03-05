@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://<your-github-username>.github.io/learning-ai/",
+  "homepage": "https://dengoloborodko.github.io/learning-ai/",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
