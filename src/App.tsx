@@ -1,9 +1,19 @@
-import { Box, CssBaseline } from '@mui/material';
+import { Box, CssBaseline, ThemeProvider, createTheme } from '@mui/material';
 import { TetrisGame } from './components/TetrisGame';
+
+const theme = createTheme({
+  palette: {
+    mode: 'dark',
+    background: {
+      default: '#121212',
+      paper: '#1e1e1e',
+    },
+  },
+});
 
 export const App = () => {
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <CssBaseline />
       <Box
         sx={{
@@ -26,6 +36,6 @@ export const App = () => {
       >
         <TetrisGame />
       </Box>
-    </>
+    </ThemeProvider>
   );
 };
